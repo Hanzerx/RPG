@@ -1,9 +1,8 @@
 import random
-from RPG.loot import loot
+from loot import loot
 
 
 def bird(position_increment):
-    counter = 0
     attempt = 0
     lucky_fairy_random_amount = 50
     player_parameters = {
@@ -37,7 +36,6 @@ def bird(position_increment):
         "health": 10
     }
 
-    grid = {"position_x": 100, "position_y": 100}
     while True:
         print("Your current position is \n"
               "x=", player_parameters["position_x"], " y=", player_parameters["position_y"])
@@ -143,7 +141,6 @@ def bird(position_increment):
                 else:
                     enemy_option = input("You can 'Flee', 'Attack' or 'Heal'")
                 encounter_increment += 1
-                enemy_attack = False
                 if enemy_option == "flee":
                     flee_chance = random.randint(0, 1)
                     if flee_chance == 0:
